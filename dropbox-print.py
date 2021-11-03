@@ -1,6 +1,7 @@
 import os
 import dropbox
 
+from shutil import copyfileobj
 from time import sleep
 from pathlib import Path
 from dotenv import load_dotenv
