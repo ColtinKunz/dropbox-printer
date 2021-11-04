@@ -47,11 +47,7 @@ while True:
                         print(f"Printing: {temp_path}")
                         startfile(temp_path, "print")
                         print(f"Added to print queue: {temp_path}")
-                        print()
-                        confirm = input("Confirm print?")
-                        print()
-                        if confirm.lower() == "y":
-                            dbx.files_delete(entry.path_lower)
+                        dbx.files_delete(entry.path_lower)
                     else:
                         raise FileNotFoundError(
                             f"Can't find '{temp_path}' on system."
