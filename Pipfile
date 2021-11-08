@@ -9,6 +9,7 @@ verify_ssl = true
 dropbox = "*"
 python-dotenv = "*"
 pathlib = "*"
+keyboard = "*"
 
 [requires]
 python_version = "3.8"

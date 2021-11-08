@@ -1,6 +1,7 @@
 import os
 import dropbox
 
+from keyboard import press
 from shutil import copyfileobj
 from time import sleep
 from pathlib import Path
@@ -47,14 +48,18 @@ while True:
                         print(f"Printing: {temp_path}")
                         startfile(temp_path, "print")
                         print(f"Added to print queue: {temp_path}")
+                        sleep(2)
+                        press("enter")
                         dbx.files_delete(entry.path_lower)
                     else:
                         raise FileNotFoundError(
                             f"Can't find '{temp_path}' on system."
                         )
                 except Exception:
+                    local_file.close()
                     remove(temp_path)
                     raise
+
                 remove(temp_path)
-        sleep(5)
+        sleep(3)
     sleep(5)
