@@ -10,6 +10,7 @@ dropbox = "*"
 python-dotenv = "*"
 pathlib = "*"
 keyboard = "*"
+pywin32 = "*"
 
 [requires]
 python_version = "3.8"
