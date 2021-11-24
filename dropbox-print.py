@@ -8,7 +8,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 from contextlib import closing
 from os import getenv, startfile, remove
-from os.path import normpath
 
 # Load .env file
 load_dotenv()
