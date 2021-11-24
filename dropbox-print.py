@@ -20,7 +20,7 @@ for d in dbx.sharing_list_folders().entries:
     if d.name == print_dir_name:
         print_dir = d
 
-if print_dir == None:
+if print_dir is None:
     raise FileNotFoundError(
         f"Can't find '{print_dir_name}' shared folder on Dropbox."
     )
