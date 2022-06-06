@@ -66,9 +66,6 @@ if print_dir is None:
         f"Can't find '{print_dir_name}' shared folder on Dropbox."
     )
 
-# Temporary download path
-path = Path("F:/Repos/dropbox-printer")
-path = Path(".")
 
 print("Running Dropbox Printer...")
 while True:
@@ -79,7 +76,7 @@ while True:
             # Make sure the status code is good
             if r.status_code == 200:
                 # Save dropbox file temporarily to path
-                temp_path = f"{path}{Path(entry.path_lower)}"
+                temp_path = Path(entry.path_lower[1:])
                 with open(temp_path, "wb") as local_file:
                     r.raw.decode_content = True
                     copyfileobj(r.raw, local_file)
@@ -87,7 +84,7 @@ while True:
                     if os.path.isfile(temp_path):
                         print(f"Printing: {temp_path}")
                         startfile(temp_path, "print")
-                        file_ending = temp_path.rsplit(".", 1)[1]
+                        file_ending = str(temp_path).rsplit(".", 1)[1]
                         # pull up window
                         hwnd = None
                         sleep(2)
