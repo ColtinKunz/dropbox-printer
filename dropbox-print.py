@@ -96,7 +96,7 @@ while True:
                             w.find_window_wildcard(".*Print.*")
                             w.set_foreground()
                         elif file_ending == "pdf":
-                            w.find_window_wildcard(".*Acrobat Pro DC.*")
+                            w.find_window_wildcard(".*Acrobat*")
                             w.close_window()
                         print(f"Added to print queue: {temp_path}")
                         press("enter")
